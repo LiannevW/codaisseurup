@@ -17,7 +17,7 @@ def create
 end
 
 def index
- @event = current_user.events
+ @events = current_user.events
 end
 
 def show
