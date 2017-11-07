@@ -7,7 +7,7 @@ attribute :include_drinks, :boolean, default: false
 attribute :active, :boolean, default: true
 
 validates :name, presence: true
-validates :discription, presence: true, length: { maximum: 500}
+validates :description, presence: true, length: { maximum: 500}
 validates :starts_at, presence: true
 validates :ends_at, presence: true
 
