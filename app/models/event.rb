@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
 
-attribute :price, :decimal, default: 0
+attribute :price, :decimal, default: 0.0
 attribute :includes_food, :boolean, default: false
 attribute :include_drinks, :boolean, default: false
 attribute :active, :boolean, default: true
