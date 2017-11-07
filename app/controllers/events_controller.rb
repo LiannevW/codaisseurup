@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def new
-    @event = current_user.event.build
+    @event = current_user.events.build
   end
 
 def create
