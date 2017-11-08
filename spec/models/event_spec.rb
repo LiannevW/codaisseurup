@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validatios" do
+    it "is invalid without a event name" do
+      event = Event.new(name: "")
+      event.valid?
+      expect(event.errors).to have_key(:name)
+    end
+
+  end
 end
