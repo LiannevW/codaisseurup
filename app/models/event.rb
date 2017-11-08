@@ -9,8 +9,8 @@ attribute :active, :boolean, default: true
 
 validates :name, presence: true
 validates :description, presence: true, length: { maximum: 500}
-validates :starts_at, presence: true
-validates :ends_at, presence: true
+# validates :starts_at, presence: true
+# validates :ends_at, presence: true
 
 
 #assignment +1 before_validation :
