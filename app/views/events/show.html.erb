@@ -16,6 +16,10 @@
 
     </ul>
 
+<h4>Photo's</h4>
+<% @event.photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>
   </div>
 
 </div>
