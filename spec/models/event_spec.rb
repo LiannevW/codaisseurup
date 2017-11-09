@@ -10,3 +10,13 @@ RSpec.describe Event, type: :model do
 
   end
 end
+
+describe "association with user" do
+  let(:user) { create :user }
+
+  it "belongs to a user" do
+    event = user.events.build(name: "Meet the..")
+
+    expect(event.user).to eq(user)
+  end
+end
