@@ -7,9 +7,13 @@ class EventsController < ApplicationController
   end
 
 def create
-  @event = current_user.event.build(room_params)
+  @event = current_user.event.build(event_params)
 
   if @event.save
+    image_params.each do |image|
+        @event.photos.create(image: image)
+      end
+
     redirect_to @event, notice: "Event created"
   else
     render :new
@@ -21,14 +25,25 @@ def index
 end
 
 def show
+  @categories = @event.categories
+  @photos = @event.photos
 end
 
 def edit
+  if current_user.id == @event.user.id
+    @photos = @event.photos
+  else
+    redirect_to root_path, notice: "You don't have permission."
+  end
 end
 
 def update
   if @event.update(event_params)
-    redirect_to @event, notice: "Event updated"
+    image_params.each do |image|
+      @event.photos.create(image: image)
+    end
+
+    redirect_to edit_event_path(@event), notice: "Event succesfully updated"
   else
     render :edit
   end
@@ -48,5 +63,9 @@ end
         :includes_drinks, :starts_at, :ends_at, :active, :user_id
       )
   end
+
+  def image_params
+  params[:images].present? ? params.require(:images) : []
+end
 
 end
