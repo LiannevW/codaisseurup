@@ -15,11 +15,4 @@ describe "Signing up" do
     end
   end
 
-  context "when password is long enough" do
-    it "creates an account for a new user" do
-      fill_in "user_password", with: "this-is-more-safe-2017"
-      click_on "Sign up"
-      expect(page).to have_content "Welcome! You have signed up successfully."
-    end
-  end
 end
