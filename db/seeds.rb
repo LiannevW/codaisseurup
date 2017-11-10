@@ -3,6 +3,7 @@ Event.destroy_all
 Photo.destroy_all
 Profile.destroy_all
 Category.destroy_all
+Registration.destroy_all
 
 #Categories
 lekker_fout = Category.create!(name: "Lekker fout")
@@ -64,3 +65,7 @@ Event.create!(
 #Photos
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dkyngsnj4/image/upload/v1510231551/FEESTBEESTEN-POSTER-e1501443822331-600x400_fwatob.jpg", event: event_1)
 photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dkyngsnj4/image/upload/v1510232385/zaai-02duVec7-thumb_vyx78o.jpg", event: event_2)
+
+#registrations
+Registration.create!(event: event_1, user: lianne, status: true, price: 45.50, guest_count: 3)
+Registration.create!(event: event_2, user: hendrik, status: false, price: 78.30, geust_count: 7)

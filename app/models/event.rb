@@ -2,6 +2,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :categories
   has_many :photos
+  has_many :registrations, dependent: :destroy
+  has_many :guest, through: :registrations, source: :user
 
 attribute :price, :decimal, default: 0.0
 attribute :includes_food, :boolean, default: false
