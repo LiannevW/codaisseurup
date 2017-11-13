@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :registrations, dependent: :destroy
   has_many :registered_events, through: :events, source: :event
+  has_secure_token
 
   def has_profile?
     profile.present? && profile.persisted?

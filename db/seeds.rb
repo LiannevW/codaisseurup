@@ -68,4 +68,4 @@ photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dkyngsnj4/im
 
 #registrations
 Registration.create!(event: event_1, user: lianne, status: true, price: 45.50, guest_count: 3)
-Registration.create!(event: event_2, user: hendrik, status: false, price: 78.30, geust_count: 7)
+Registration.create!(event: event_2, user: hendrik, status: false, price: 78.30, guest_count: 7)

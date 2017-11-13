@@ -21,6 +21,13 @@ describe "association with user" do
   end
 end
 
+
+
+
+
+
+
+
 describe "association with registration" do
   let(:guest_user) { create :user, email: "guest@user.com" }
   let(:host_user) { create :user, email: "host@user.com" }

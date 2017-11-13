@@ -3,6 +3,17 @@
 
   <div class="panel-body">
 
+<!-- booking form -->
+<% if current_user != @event.user %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Book this room</div>
+
+    <div class="panel-body">
+      <%= render 'registrations/form' %>
+    </div>
+  </div>
+<% end %>
+
     <!-- Main Info -->
     <h4>Main Info</h4>
     <p>Adres: <%=@event.location%></p>
